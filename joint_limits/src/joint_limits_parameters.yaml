@@ -1,0 +1,73 @@
+joint_limits_parameters:
+  joint:
+    has_position_limits: {
+      type: bool,
+      description: "TODO",
+      validation: {
+        one_of<>: [[true,false]]
+      }
+    }
+    min_position: {
+      type: double,
+      description: "TODO",
+    }
+    max_position: {
+      type: double,
+      description: "TODO",
+    }
+    has_velocity_limits: {
+      type: bool,
+      description: "TODO",
+    }
+    max_velocity: {
+      type: double,
+      description: "TODO",
+    }
+    has_acceleration_limits: {
+      type: bool,
+      description: "TODO",
+    }
+    max_acceleration: {
+      type: double,
+      description: "TODO",
+    }
+    has_jerk_limits: {
+      type: bool,
+      description: "TODO",
+    }
+    max_jerk: {
+      type: double,
+      description: "TODO",
+    }
+    has_effort_limits: {
+      type: bool,
+      description: "TODO",
+    }
+    max_effort: {
+      type: double,
+      description: "TODO",
+    }
+    angle_wraparound: {
+      type: bool,
+      description: "TODO",
+    }
+    has_soft_limits: {
+      type: bool,
+      description: "TODO",
+    }
+    k_position: {
+      type: double,
+      description: "TODO",
+    }
+    k_velocity: {
+      type: double,
+      description: "TODO",
+    }
+    soft_lower_limit: {
+      type: double,
+      description: "TODO",
+    }
+    soft_upper_limit: {
+      type: double,
+      description: "TODO",
+    }
