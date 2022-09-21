@@ -29,6 +29,8 @@ if(BUILD_TESTING)
 
   find_package(ament_cmake_gtest REQUIRED)
   find_package(launch_testing_ament_cmake)
+  find_package(rclcpp)
+  find_package(rclcpp_lifecycle)
 
   find_package(generate_parameter_library REQUIRED)
   add_rostest_with_parameters_gtest(joint_limits_rosparam_test test/joint_limits_rosparam_test.cpp 

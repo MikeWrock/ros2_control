@@ -89,37 +89,37 @@ inline bool declare_parameters(
   const std::string param_base_name = "joint_limits." + joint_name;
   try
   {
-    auto param_listener = std::make_shared<joint_limits_parameters::ParamListener>(param_itf);
-    auto params = param_listener->get_params();
-    // auto_declare<bool>(param_itf, param_base_name + ".has_position_limits", false);
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".min_position", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".max_position", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<bool>(param_itf, param_base_name + ".has_velocity_limits", false);
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".min_velocity", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".max_velocity", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<bool>(param_itf, param_base_name + ".has_acceleration_limits", false);
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".max_acceleration", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<bool>(param_itf, param_base_name + ".has_jerk_limits", false);
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".max_jerk", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<bool>(param_itf, param_base_name + ".has_effort_limits", false);
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".max_effort", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<bool>(param_itf, param_base_name + ".angle_wraparound", false);
-    // auto_declare<bool>(param_itf, param_base_name + ".has_soft_limits", false);
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".k_position", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".k_velocity", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".soft_lower_limit", std::numeric_limits<double>::quiet_NaN());
-    // auto_declare<double>(
-    //   param_itf, param_base_name + ".soft_upper_limit", std::numeric_limits<double>::quiet_NaN());
+    // auto param_listener = std::make_shared<joint_limits_parameters::ParamListener>(param_itf);
+    // auto params = param_listener->get_params();
+    auto_declare<bool>(param_itf, param_base_name + ".has_position_limits", false);
+    auto_declare<double>(
+      param_itf, param_base_name + ".min_position", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<double>(
+      param_itf, param_base_name + ".max_position", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<bool>(param_itf, param_base_name + ".has_velocity_limits", false);
+    auto_declare<double>(
+      param_itf, param_base_name + ".min_velocity", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<double>(
+      param_itf, param_base_name + ".max_velocity", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<bool>(param_itf, param_base_name + ".has_acceleration_limits", false);
+    auto_declare<double>(
+      param_itf, param_base_name + ".max_acceleration", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<bool>(param_itf, param_base_name + ".has_jerk_limits", false);
+    auto_declare<double>(
+      param_itf, param_base_name + ".max_jerk", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<bool>(param_itf, param_base_name + ".has_effort_limits", false);
+    auto_declare<double>(
+      param_itf, param_base_name + ".max_effort", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<bool>(param_itf, param_base_name + ".angle_wraparound", false);
+    auto_declare<bool>(param_itf, param_base_name + ".has_soft_limits", false);
+    auto_declare<double>(
+      param_itf, param_base_name + ".k_position", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<double>(
+      param_itf, param_base_name + ".k_velocity", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<double>(
+      param_itf, param_base_name + ".soft_lower_limit", std::numeric_limits<double>::quiet_NaN());
+    auto_declare<double>(
+      param_itf, param_base_name + ".soft_upper_limit", std::numeric_limits<double>::quiet_NaN());
   }
   catch (const std::exception & ex)
   {
@@ -223,6 +223,12 @@ inline bool get_joint_limits(
   JointLimits & limits)
 {
   const std::string param_base_name = "joint_limits." + joint_name;
+
+
+// std::unordered_map<std::string, std::shared_ptr<kinematics::ParamListener>> kinematics_param_listener_;
+//   std::unordered_map<std::string, kinematics::Params> kinematics_params_;
+
+
   try
   {
     if (
